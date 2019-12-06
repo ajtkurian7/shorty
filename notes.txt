@@ -1,0 +1,17 @@
+This is my submission for a URL Shortener -> Shorty
+
+The stack looks like:
+DB -> DynamoDB
+API Layer -> Express
+FrontEnd -> React
+
+I chose DynamoDB because it was a NoSQL Key value database where the slug could be set and retrieved quickly.  And since it is a managed database deploying to production is quick and painless.  I picked Express because it was what I have used on other teams.  It presents a quick and easy way to get up a working API Layer without much boilerplate.  I used React on the frontend because that is what is mainly used by you guys; however, I feel like it is overkill for a project like this where vanilla JS and template views would have probably been best.
+
+I used create-react-app to scaffold the front end.  It came with a testing suite (Jest), however it was not conducive to my testing strategy of unit testing -> integration testing -> UI (E2E) testing. I have used mocha in the past.  I put a few tests in the folder as a bare minimum but I wish I had more time to flesh out and configure properly.
+
+> To use just go to: localhost:5000 and enter a long URL.
+> A minified URL should return.  If an error arises the user is prompted.  Only constraint is that the input begins with 'http'.  The user is prompted if it is not valid
+
+
+
+
