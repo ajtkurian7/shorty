@@ -1,4 +1,4 @@
-const { getUrlFromDb, postUrlToDb } = require('../model/url')
+const { getUrlFromDb, postUrlToDb } = require('../model/url');
 
 const getUrlFromSlug = async (req, res) => {
     const { slug } = req.params;

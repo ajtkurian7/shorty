@@ -1,16 +1,15 @@
+export const isValidUrl = url => {
+    const urlRegex = /^(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
 
-export const isValidUrl = (url) => {
-    const urlRegex = /^(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/
-
-    return urlRegex.test(url)
-}
+    return urlRegex.test(url);
+};
 
 export default async function postUrlService(longUrl) {
     if (!isValidUrl(longUrl)) {
         return Promise.resolve({
             errorMessage: true,
-            errorType: 'invalidUrl'
-        })
+            errorType: 'invalidUrl',
+        });
     }
     try {
         const response = await fetch('/', {
@@ -23,9 +22,9 @@ export default async function postUrlService(longUrl) {
                 url: longUrl,
             }),
         });
-    
+
         return await response.json();
-    } catch(e) {
-        return { errorMessage: true }
+    } catch (e) {
+        return { errorMessage: true };
     }
 }

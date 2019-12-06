@@ -1,4 +1,4 @@
-const { ALPHABET, SLUG_LENGTH } = require('./constants')
+const { ALPHABET, SLUG_LENGTH } = require('./constants');
 
 const generateRandomSlug = (slugLength = SLUG_LENGTH, alphabet = ALPHABET) => {
     let slug = '';
@@ -13,4 +13,4 @@ const generateRandomSlug = (slugLength = SLUG_LENGTH, alphabet = ALPHABET) => {
 
 module.exports = {
     generateRandomSlug,
-}
+};

@@ -7,14 +7,14 @@ const postUrlToDb = async (url, counter = 0) => {
     }
     const slug = generateRandomSlug();
     const response = await dbAdapters.put(slug, url);
-    console.log(response)
+    console.log(response);
     if (!response.success && response.isDuplicateKey) {
         return postUrlToDb(url, counter + 1);
     }
     return {
         ...response,
         slug,
-        url
+        url,
     };
 };
 

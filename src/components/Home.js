@@ -10,7 +10,7 @@ class Home extends Component {
         slug: '',
         longUrl: '',
         isLoading: false,
-        errorMessage: ''
+        errorMessage: '',
     };
 
     _getErrorMessage(errorType) {

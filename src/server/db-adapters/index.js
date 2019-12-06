@@ -1,5 +1,5 @@
 const adapterPairs = {
-    dynamo: require('./dynamodb')
-}
+    dynamo: require('./dynamodb'),
+};
 
-module.exports = adapterPairs[process.env.DB_ADAPTERS] || adapterPairs.dynamo
+module.exports = adapterPairs[process.env.DB_ADAPTERS] || adapterPairs.dynamo;

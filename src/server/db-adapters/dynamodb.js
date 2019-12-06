@@ -12,7 +12,7 @@ const config = {
 };
 
 const docClient = new AWS.DynamoDB.DocumentClient(config);
-const ddb = new AWS.DynamoDB(config)
+const ddb = new AWS.DynamoDB(config);
 
 exports.get = async key => {
     const params = {
@@ -55,7 +55,7 @@ exports.put = async (slug, url) => {
         return {
             success: false,
             isDuplicateKey: e.code === 'ConditionalCheckFailedException',
-            errorMessage: e.message
+            errorMessage: e.message,
         };
     }
 };
@@ -66,13 +66,13 @@ exports.createTable = async (key, tableName) => {
             {
                 AttributeName: key,
                 AttributeType: 'S',
-            }
+            },
         ],
         KeySchema: [
             {
                 AttributeName: key,
                 KeyType: 'HASH',
-            }
+            },
         ],
         ProvisionedThroughput: {
             ReadCapacityUnits: process.env.DYNAMO_READ_UNITS || 5,
@@ -82,17 +82,17 @@ exports.createTable = async (key, tableName) => {
     };
 
     try {
-        await ddb.createTable(params).promise()
-        console.log(`Table Created: ${tableName}`)
+        await ddb.createTable(params).promise();
+        console.log(`Table Created: ${tableName}`);
         return {
             success: true,
-            tableName
-        }
-    } catch(e) {
-        console.log('Table Creation Failed')
+            tableName,
+        };
+    } catch (e) {
+        console.log('Table Creation Failed');
         return {
             success: false,
-            errorMessage: e.message
-        }
+            errorMessage: e.message,
+        };
     }
-}
+};

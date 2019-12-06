@@ -1,4 +1,4 @@
-const { postUrlWithGeneratedSlug, getUrlFromSlug } = require('../controller')
+const { postUrlWithGeneratedSlug, getUrlFromSlug } = require('../controller');
 const router = require('express').Router();
 
 router.post('/', postUrlWithGeneratedSlug);
