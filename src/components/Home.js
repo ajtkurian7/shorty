@@ -29,7 +29,7 @@ class Home extends Component {
             this.state.longUrl
         );
 
-        if (errorMessage) {
+        if (errorMessage || errorType) {
             return this.setState({
                 errorMessage: this._getErrorMessage(errorType),
                 isLoading: false,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function({ slug }) {
+const Shorty = function({ slug }) {
     if (!slug) {
         return null;
     }
@@ -16,3 +16,5 @@ export default function({ slug }) {
         </div>
     );
 }
+
+export default Shorty;
