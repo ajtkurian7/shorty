@@ -8,11 +8,11 @@
     "@testing-library/user-event": "^7.1.2",
     "aws-sdk": "^2.585.0",
     "classcat": "^4.0.2",
-    "express": "^4.17.1",
+    "express": "^4.22.1",
     "ignore-styles": "^5.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "npm run build && node src/server",
